@@ -70,7 +70,7 @@ hr{
         align-items: center;
       }
 
-      li:first-child{
+      li{
         &:hover{
           .navBarDD{
             display: block;
@@ -105,19 +105,13 @@ hr{
     }
 }
 
-#hero{
-  width: 100vw;
-  height: 550px;
-  background-color: green;
-}
-
 .navBarDD{
   width: auto;
   height: auto;
   background-color: white;
   display: none;
   position: absolute;
-  padding: 15px 0px;
+  padding: 5px 0px;
   top: $navBarHeight - 1px;
   left: 0px;
   border-bottom: $navBarBorderStyle;
