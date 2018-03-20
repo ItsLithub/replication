@@ -11,6 +11,11 @@
       padding-bottom: 1px;
       cursor: pointer;
       letter-spacing: .1em;
+
+      &:hover{
+        color: #1BA3DE;
+        fill: #1BA3DE;
+      }
     }
   }
 }
@@ -49,8 +54,16 @@
 
       @extend %listSpace;
 
+      li:first-child{
+        color: #1BA3DE;
+      }
+
       li:last-child{
-        margin: inherit 0px inherit inherit;
+        margin: 0px 0px 0px 5px;
+      }
+
+      li:nth-child(2){
+        margin-right: 0px;
       }
     }
 }
