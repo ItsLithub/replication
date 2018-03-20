@@ -1,17 +1,29 @@
+$navBarHeight: 66px;
+$navBarBorderStyle: 1px solid #e5e5e5;
+
+hr{
+  width: 100%;
+  border-top: 1px solid #e3e3e3;
+  border-bottom: none;
+}
+
 %listSpace{
   ul{
     display: flex;
     justify-content: space-around;
     align-items: center;
     li{
-      margin: 0 15px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      margin: 0 0;
       text-transform: uppercase;
       font-size: .88em;
       color: #595959;
       padding-bottom: 1px;
       cursor: pointer;
       letter-spacing: .1em;
-
+      position: relative;
       &:hover{
         color: #1BA3DE;
         fill: #1BA3DE;
@@ -21,13 +33,14 @@
 }
 
 #navBar{
-  height: 66px;
+  height: $navBarHeight;
   width: 100vw;
   display: flex;
   justify-content: space-between;
   padding: 0 50px;
   box-sizing: border-box;
-  border-bottom: 1px solid #595959;
+  border-bottom: $navBarBorderStyle;
+  @extend %listSpace;
 
     #navBarLeft{
       height: 100%;
@@ -35,6 +48,21 @@
       display: flex;
       justify-content: space-between;
 
+      ul{
+        li{
+          margin: 0 15px;
+           ul{
+             li{
+               width: 100%;
+               margin: 10px 10px;
+               text-transform: capitalize;
+               font-size: 1em;
+               letter-spacing: -0.025;
+               padding-left: 50px;
+             }
+           }
+        }
+      }
       #navBarLogo{
         height: 100%;
         width: auto;
@@ -42,20 +70,29 @@
         align-items: center;
       }
 
-      @extend %listSpace;
-
-      //li:first-child
+      li:first-child{
+        &:hover{
+          .navBarDD{
+            display: block;
+          }
+        }
+      }
     }
+
 
     #navBarRight{
       height: 100%;
       width: auto;
       display: flex;
 
-      @extend %listSpace;
+      li{
+        margin: 0 15px;
+      }
 
       li:first-child{
         color: #1BA3DE;
+
+
       }
 
       li:last-child{
@@ -66,4 +103,40 @@
         margin-right: 0px;
       }
     }
+}
+
+#hero{
+  width: 100vw;
+  height: 550px;
+  background-color: green;
+}
+
+.navBarDD{
+  width: auto;
+  height: auto;
+  background-color: white;
+  display: none;
+  position: absolute;
+  padding: 15px 0px;
+  top: $navBarHeight - 1px;
+  left: 0px;
+  border-bottom: $navBarBorderStyle;
+  border-left: $navBarBorderStyle;
+  border-right: $navBarBorderStyle;
+
+  &:hover{
+    cursor: default;
+  }
+
+  ul{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    li{
+      width: 100%;
+      height: auto;
+      margin: 0;
+    }
+  }
 }
