@@ -3,7 +3,9 @@
 //IMPORTED PARTIALS
 @import 'components/reset';
 @import 'components/fontFaces';
+@import 'components/typeStyles';
 @import 'components/navbar';
+@import 'components/jumbotron';
 //MASTER CONTROLS
 body{
   height: 100vh;
@@ -12,4 +14,31 @@ body{
   font-family: 'Avenir Next', sans-serif;
   background-color: #FFF;
   font-weight: 300;
+}
+//SUPERCLASSES
+.contentWrapper{
+  width: 1000px;margin: 0 auto;
+}
+
+.ctaBlueButton{
+  width: auto;
+  height: 44px;
+  background-color: #449FD8;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,.95);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: .9em;
+  margin: 10px 0;
+  user-select: none;
+  cursor: pointer;
+  transition: .3s;
+  
+  &:hover{
+    background-color: #1589CA;
+    transition: .3s;
+  }
 }

@@ -1,0 +1,17 @@
+//JUMBOTRON SASS CODE
+
+#jumbotron{
+  width: 100vw;
+  height: 550px;
+  background: url('imgs/heroImg.jpeg');
+  background-size: cover;
+  background-position: 0px -33px;
+}
+
+#jumboTronContent{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
